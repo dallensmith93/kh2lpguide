@@ -72,7 +72,7 @@ const LEGACY_EPISODE_MAP = Object.fromEntries(Array.from({length:45}, (_, i) => 
   return [old, old <= 31 ? old : old <= 35 ? old - 1 : old - 2];
 }));
 
-const BOSSES = [
+const KH_BOSSES = [
   ['as-zexion', 'Zexion', 'Absent Silhouettes', 31], ['as-lexaeus', 'Lexaeus', 'Absent Silhouettes', 31], ['as-vexen', 'Vexen', 'Absent Silhouettes', 32], ['as-larxene', 'Larxene', 'Absent Silhouettes', 32], ['as-marluxia', 'Marluxia', 'Absent Silhouettes', 32],
   ['sephiroth', 'Sephiroth', 'Final challenges', 33], ['hades', 'Hades Paradox Cup', 'Final challenges', 36],
   ['data-xigbar', 'Xigbar', 'Data Organization XIII', 38], ['data-luxord', 'Luxord', 'Data Organization XIII', 38], ['data-vexen', 'Vexen', 'Data Organization XIII', 39], ['data-demyx', 'Demyx', 'Data Organization XIII', 39], ['data-lexaeus', 'Lexaeus', 'Data Organization XIII', 40], ['data-larxene', 'Larxene', 'Data Organization XIII', 40], ['data-zexion', 'Zexion', 'Data Organization XIII', 41], ['data-marluxia', 'Marluxia', 'Data Organization XIII', 41], ['data-axel', 'Axel', 'Data Organization XIII', 42], ['data-saix', 'Saïx', 'Data Organization XIII', 42], ['data-roxas', 'Roxas', 'Data Organization XIII', 43], ['data-xaldin', 'Xaldin', 'Data Organization XIII', 43], ['data-xemnas', 'Xemnas', 'Data Organization XIII', 44], ['lingering-will', 'Lingering Will', 'Final challenges', 45]

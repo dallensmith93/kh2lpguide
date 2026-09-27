@@ -50,9 +50,9 @@ with sync_playwright() as p:
     with page.expect_download() as downloaded:
         page.locator('#export-button').click()
     backup = json.loads(Path(downloaded.value.path()).read_text())
-    assert backup['bosses']['sephiroth'] is True
-    assert backup['statuses']['5'] == 'recorded'
-    assert backup['version'] == 2
+    assert backup['games']['kh2fm']['bosses']['sephiroth'] is True
+    assert backup['games']['kh2fm']['statuses']['5'] == 'recorded'
+    assert backup['version'] == 3
     page.on('dialog', lambda dialog: dialog.accept())
     page.locator('#import-file').set_input_files({"name":"backup.json", "mimeType":"application/json", "buffer":json.dumps(backup).encode()})
     assert page.locator('#toast').inner_text() == 'Progress backup restored.'

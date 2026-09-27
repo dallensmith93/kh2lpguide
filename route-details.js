@@ -289,7 +289,7 @@ const DETAILS = {
   ['Discuss how the film changes your reading of the KH2 prologue.', 'Close the full 45-episode series here; do not end before the credits to hit a time target.'], 'Full HD movie watched; finish at the Chapters/menu screen.']
 };
 
-const EPISODES = Array.from({length:45}, (_, index) => {
+const KH_EPISODES = Array.from({length:45}, (_, index) => {
   const id=index+1;
   let base;
   if(id<=30) base=ORIGINAL_EPISODES[id-1];

@@ -10,17 +10,22 @@
   <link rel="icon" href="assets/heart-crest.svg" type="image/svg+xml">
   <script src="episodes.js" defer></script>
   <script src="route-details.js" defer></script>
+  <script src="ff9-roadmap.js" defer></script>
+  <script src="spiderman-roadmap.js" defer></script>
+  <script src="games.js" defer></script>
   <script src="progress.js" defer></script>
   <script src="guide-view.js" defer></script>
+  <script src="library-view.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
   <aside class="sidebar">
     <a class="brand" href="#episode-5" aria-label="Wayfinder home"><span class="brand-symbol">✧</span><span>wayfinder<small>THE RECORDING JOURNAL</small></span></a>
+    <label class="game-select-label" for="game-select">CHOOSE YOUR SERIES</label><select id="game-select"><option value="kh2fm">Kingdom Hearts II Final Mix</option><option value="ff9">Final Fantasy IX · 45 parts</option><option value="spiderman-ctns">Spider-Man CTNS · 20 parts</option></select>
     <div class="series-label">YOUR SERIES</div>
     <div class="series-name">Kingdom Hearts II<span>FINAL MIX + 358/2 DAYS</span></div>
     <div class="command-label">COMMAND</div><nav aria-label="Guide views"><button class="nav-button active" data-view="roadmap"><span>▤</span> Episode roadmap <span class="nav-count">45</span></button><button class="nav-button" data-view="bosses"><span>♧</span> Boss checklist <span class="nav-count">21</span></button><button class="nav-button" data-view="prep"><span>◇</span> Recording essentials</button></nav>
-    <div class="sidebar-bottom"><div class="save-indicator"><i></i><span id="save-label">Saved on this device</span></div><button id="export-button" class="text-button">↓ Export progress</button><button id="import-button" class="text-button">↑ Import backup</button><input id="import-file" type="file" accept="application/json,.json" hidden><p>Your adventures. Your pace.<br>Every ending is a new beginning.</p></div>
+    <div class="sidebar-bottom"><div class="save-indicator"><i></i><span id="save-label">Saved on this device</span></div><button id="download-roadmap" class="text-button" hidden>↓ Download episode data</button><button id="export-button" class="text-button">↓ Export progress</button><button id="import-button" class="text-button">↑ Import backup</button><input id="import-file" type="file" accept="application/json,.json" hidden><p>Your adventures. Your pace.<br>Every ending is a new beginning.</p></div>
   </aside>
   <main>
     <header class="topbar"><div><span class="breadcrumb">THE RECORDING ROOM</span><span class="breadcrumb-divider">/</span><span id="view-label">Episode roadmap</span></div><span class="edition">KH2FM <span>•</span> 45-PART SERIES</span></header>
