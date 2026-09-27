@@ -1,0 +1,7 @@
+{
+  "name": "wayfinder-kh2fm",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A 45-episode Kingdom Hearts II Final Mix recording companion",
+  "scripts": {"start": "python -m http.server 4173 --bind 127.0.0.1", "check": "node --check app.js && node --check episodes.js"}
+}
