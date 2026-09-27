@@ -16,7 +16,7 @@ const EPISODE_TIMES = [
 ];
 
 // The full 45-part recording roadmap. Episode boundaries are editorial targets.
-const EPISODES = [
+const ORIGINAL_EPISODES = [
   [1, 'Roxas and the Stolen Summer', 'Simulated Twilight Town', ['Introduce Roxas, Hayner, Pence, and Olette; investigate the stolen photographs.', 'Cover the summer jobs and strange interruptions.', 'Follow the mysterious girl into the Station of Awakening.'], 'Seifer’s introductory duel, Dusks, and Twilight Thorn. Highlight targeting, defensive timing, and reaction commands. Roxas has no Drive Forms.', 'The opening of Day 4, before the Struggle tournament. Preserve your existing recording boundary if different.'],
   [2, 'The Struggle Tournament and Axel', 'Simulated Twilight Town', ['Play the Struggle tournament and retain its supernatural interruption.', 'Introduce Axel and his unexplained connection to Roxas.', 'Investigate the Seven Wonders through the end of Day 5.'], 'Hayner, Vivi, Axel’s first battle, Setzer, and the investigation encounters. Explain Struggle’s orb scoring and Guard against Axel’s approaches.', 'The Day 6 opening transition, before proceeding toward the mansion.'],
   [3, 'Roxas’s Last Summer Day', 'Simulated Twilight Town · Old Mansion', ['Cross the woods and explore the White Room, Library, and basement.', 'Keep Naminé’s explanation, DiZ’s intervention, and the confrontation with the simulation.', 'Follow the final corridor to the sleeping Sora.'], 'Mansion Nobodies and Axel’s second battle. Showcase Roxas’s temporary dual wielding and reaction commands.', 'The transition from Roxas’s farewell into Sora’s awakening.'],
@@ -67,8 +67,13 @@ const EPISODES = [
   return {id, title, world, objectives, encounters, stop, timing:{editedMin, editedMax, recordingMin, recordingMax}};
 });
 
+const LEGACY_EPISODE_MAP = Object.fromEntries(Array.from({length:45}, (_, i) => {
+  const old = i + 1;
+  return [old, old <= 31 ? old : old <= 35 ? old - 1 : old - 2];
+}));
+
 const BOSSES = [
   ['as-zexion', 'Zexion', 'Absent Silhouettes', 31], ['as-lexaeus', 'Lexaeus', 'Absent Silhouettes', 31], ['as-vexen', 'Vexen', 'Absent Silhouettes', 32], ['as-larxene', 'Larxene', 'Absent Silhouettes', 32], ['as-marluxia', 'Marluxia', 'Absent Silhouettes', 32],
   ['sephiroth', 'Sephiroth', 'Final challenges', 33], ['hades', 'Hades Paradox Cup', 'Final challenges', 36],
   ['data-xigbar', 'Xigbar', 'Data Organization XIII', 38], ['data-luxord', 'Luxord', 'Data Organization XIII', 38], ['data-vexen', 'Vexen', 'Data Organization XIII', 39], ['data-demyx', 'Demyx', 'Data Organization XIII', 39], ['data-lexaeus', 'Lexaeus', 'Data Organization XIII', 40], ['data-larxene', 'Larxene', 'Data Organization XIII', 40], ['data-zexion', 'Zexion', 'Data Organization XIII', 41], ['data-marluxia', 'Marluxia', 'Data Organization XIII', 41], ['data-axel', 'Axel', 'Data Organization XIII', 42], ['data-saix', 'Saïx', 'Data Organization XIII', 42], ['data-roxas', 'Roxas', 'Data Organization XIII', 43], ['data-xaldin', 'Xaldin', 'Data Organization XIII', 43], ['data-xemnas', 'Xemnas', 'Data Organization XIII', 44], ['lingering-will', 'Lingering Will', 'Final challenges', 45]
-].map(([id, name, group, episode]) => ({id, name, group, episode}));
+].map(([id, name, group, episode]) => ({id, name, group, episode: LEGACY_EPISODE_MAP[episode]}));
