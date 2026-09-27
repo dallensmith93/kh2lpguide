@@ -1,0 +1,119 @@
+/* Theme overrides are scoped to the selected guide; KH keeps its own stylesheet. */
+body[data-game="ff9"] {
+  --bg:#111725;--panel:#1c315c;--panel-light:#29426d;--line:#61758c;
+  --text:#f8f3e3;--muted:#c0c9d8;--gold:#ecd79b;--green:#a7d1bd;
+  background:radial-gradient(ellipse at 80% 0,#48516b44,transparent 60%),#111725;
+}
+body[data-game="spiderman-ctns"] {
+  --bg:#101319;--panel:#1a2029;--panel-light:#272e39;--line:#3c4654;
+  --text:#f5f7fa;--muted:#b4bfcc;--gold:#ff5c6c;--green:#83d9c0;
+  background:linear-gradient(125deg,#1c2028,#101319 65%);
+}
+/* Shared theme plumbing removes inherited heart crests and command-menu gold. */
+body:is([data-game="ff9"],[data-game="spiderman-ctns"]) .sidebar{overflow-y:auto}
+body:is([data-game="ff9"],[data-game="spiderman-ctns"]) .brand:before,
+body:is([data-game="ff9"],[data-game="spiderman-ctns"]) .detail-banner:after{background-image:var(--game-emblem)}
+body:is([data-game="ff9"],[data-game="spiderman-ctns"]) .detail-banner:after{width:45px;height:55px;opacity:.12}
+body:is([data-game="ff9"],[data-game="spiderman-ctns"]) .hero:after{background:var(--hero-scrim)}
+body:is([data-game="ff9"],[data-game="spiderman-ctns"]) .hero .eyebrow{color:var(--gold)}
+body:is([data-game="ff9"],[data-game="spiderman-ctns"]) :is(.hero p,.route-banner p,.prep-card p,.objective,.start-box p){color:var(--muted)}
+body:is([data-game="ff9"],[data-game="spiderman-ctns"]) :is(.detail-meta,.detail-location,.guide-reference,.guide-reference a,.chapter-label,.section-count,.edition){color:var(--muted)}
+body:is([data-game="ff9"],[data-game="spiderman-ctns"]) :is(.guide-section,.topbar,.boss-row){border-color:var(--line)}
+body:is([data-game="ff9"],[data-game="spiderman-ctns"]) :is(.route-banner strong,.episode-tag){color:var(--text)}
+body:is([data-game="ff9"],[data-game="spiderman-ctns"]) :is(.notes,select,#game-select,.search-box){background:#111a29;border-color:var(--line);color:var(--text)}
+body:is([data-game="ff9"],[data-game="spiderman-ctns"]) .start-box{border-color:var(--gold)}
+body:is([data-game="ff9"],[data-game="spiderman-ctns"]) .start-box span{color:var(--gold)}
+body:is([data-game="ff9"],[data-game="spiderman-ctns"]) :is(.episode-card,.nav-button,.primary-button){transition:background .15s,border-color .15s}
+/* FINAL FANTASY IX: silver-edged blue windows, book typography, mist and crystal. */
+body[data-game="ff9"]{--game-emblem:url('assets/gaia-crystal.svg');--hero-scrim:linear-gradient(90deg,#172541 0%,#172541e8 28%,#17254155 65%,transparent)}
+body[data-game="ff9"] .sidebar{background:linear-gradient(135deg,#1e3054,#121d34);border-right:3px ridge #a0a9b5}
+body[data-game="ff9"] .brand{font-family:Georgia,serif;font-weight:400;letter-spacing:0}
+body[data-game="ff9"] .brand:before{width:28px;height:40px}
+body[data-game="ff9"] .series-name{font-family:Georgia,serif;font-style:normal;font-weight:400;letter-spacing:1px;line-height:1.5}
+body[data-game="ff9"] .command-label{background:transparent;border:0;color:#d4dded;padding:5px 0;font-style:normal;font-weight:400;font-family:Georgia,serif;letter-spacing:3px}
+body[data-game="ff9"] :is(.sidebar nav,.stats,.episode-card,.episode-detail,.boss-group,.prep-card){background:linear-gradient(135deg,#304f83,#16284f 80%);border:3px ridge #aeb9c7;border-radius:8px;box-shadow:inset 0 0 0 1px #111c37,2px 4px 0 #060d1a80}
+body[data-game="ff9"] .nav-button{position:relative;font-family:Georgia,serif;font-size:13px;color:#e8edf8;padding-left:20px}
+body[data-game="ff9"] .nav-button.active{background:#536c9a55;border-color:transparent;color:#fff;box-shadow:none;text-shadow:1px 2px #0a1736}
+body[data-game="ff9"] .nav-button.active>span:first-child{color:#eee8d6}
+body[data-game="ff9"] .nav-button.active:before{content:'☞';font-family:Georgia,serif;font-size:25px;left:-8px;color:#fff}
+body[data-game="ff9"] .hero{background:#263b5e url('assets/gaia-horizon.svg') center/cover no-repeat;border:3px ridge #b5b9bb;border-radius:9px;min-height:380px;box-shadow:0 8px 30px #0004}
+body[data-game="ff9"] .hero h1.game-title{font-family:Georgia,'Times New Roman',serif;font-size:58px;font-style:normal;font-weight:400;letter-spacing:-2px;text-transform:none;line-height:1.12;color:#fff4d9;text-shadow:1px 3px 3px #12213c;max-width:470px}
+body[data-game="ff9"] .hero-subtitle{color:#efd99e;font-family:Georgia,serif;letter-spacing:4px}
+body[data-game="ff9"] .primary-button{background:linear-gradient(#e7d8b5,#c4ac7d);border:2px ridge #fff2d2;border-radius:5px;color:#292a38;box-shadow:2px 3px #0c152c}
+body[data-game="ff9"] .primary-button:hover{background:#f3e6c4}
+body[data-game="ff9"] .stats p{font-family:Georgia,serif;text-shadow:1px 2px #111c31}
+body[data-game="ff9"] .stats>div{border-color:#7286a2}
+body[data-game="ff9"] .progress-track{background:#10213e;border-color:#8297b0;border-radius:2px}
+body[data-game="ff9"] #progress-fill{background:linear-gradient(90deg,#7491b9,#d6e0f1)}
+body[data-game="ff9"] .route-banner{background:#242e42;border:1px solid #93866b;border-left:4px solid #d4bd88;border-radius:5px}
+body[data-game="ff9"] .section-heading h2{font:32px Georgia,serif;letter-spacing:0;color:#efdfbc}
+body[data-game="ff9"] .episode-card{border-width:2px;background:linear-gradient(120deg,#253d67,#182849);border-color:#72839e}
+body[data-game="ff9"] .episode-card.selected{background:linear-gradient(110deg,#496694,#253e68);border-color:#e9e2d1;box-shadow:inset 3px 0 #e5d5ac}
+body[data-game="ff9"] .episode-number{font:28px Georgia,serif;color:#ded6bc}
+body[data-game="ff9"] .episode-card h3{font-family:Georgia,serif;font-size:14px;font-weight:400}
+body[data-game="ff9"] .detail-banner{background:linear-gradient(110deg,#3c5681,#23385e);border-bottom:2px ridge #abb6c7}
+body[data-game="ff9"] :is(.detail-banner h2,.boss-group h3,.prep-card h3){font-family:Georgia,serif;font-weight:400;letter-spacing:0;color:#fff2d4}
+body[data-game="ff9"] .timing-box{background:#132343;border:1px solid #788ba8;border-radius:5px}
+body[data-game="ff9"] .timing-values strong{font-family:Georgia,serif;font-weight:400}
+body[data-game="ff9"] .stop-box{background:linear-gradient(110deg,#3a3b48,#252c3d);border-color:#ac9870;border-radius:5px}
+body[data-game="ff9"] .stop-box p{color:#e6decf}
+body[data-game="ff9"] .detail-footer{background:#17284b}
+body[data-game="ff9"] .status-pill{background:#182c4c;border-color:#8d9db7}
+body[data-game="ff9"] .objective input{background:#112142;border-color:#9dacbf}
+body[data-game="ff9"] .objective input:checked{background:#e5d6ad}
+/* SPIDER-MAN: angular mission panels, white spider, red active states, map grid. */
+body[data-game="spiderman-ctns"]{--game-emblem:url('assets/spider-emblem.svg');--hero-scrim:linear-gradient(90deg,#111820 3%,#111820ef 35%,#11182033 74%,transparent)}
+body[data-game="spiderman-ctns"] .sidebar{background:#11161e;border-right:1px solid #3c4654}
+body[data-game="spiderman-ctns"] .brand:before{width:30px;height:38px}
+body[data-game="spiderman-ctns"] .brand{font-style:normal;letter-spacing:-.5px}
+body[data-game="spiderman-ctns"] .series-name{color:#fff;font-size:26px;letter-spacing:-1px;font-style:normal}
+body[data-game="spiderman-ctns"] .command-label{background:#cb2639;border:0;border-radius:0;padding:6px 10px;font-style:normal;letter-spacing:2px;font-size:10px}
+body[data-game="spiderman-ctns"] .sidebar nav{background:#181e27;border:1px solid #3f4654;border-top:0;border-radius:0;box-shadow:none;padding:5px}
+body[data-game="spiderman-ctns"] .nav-button{border-radius:0;color:#c2ccd9;font-size:11px}
+body[data-game="spiderman-ctns"] .nav-button.active{background:#d32a3e;color:white;border-color:#ed4052;box-shadow:none}
+body[data-game="spiderman-ctns"] .nav-button.active>span:first-child{color:white}
+body[data-game="spiderman-ctns"] .nav-button.active:before{display:none}
+body[data-game="spiderman-ctns"] .hero{background:#171d26 url('assets/manhattan-grid.svg') center/cover no-repeat;border:1px solid #70414d;border-left:4px solid #e9364d;border-radius:0;min-height:380px;box-shadow:none}
+body[data-game="spiderman-ctns"] .hero h1.game-title{font-family:var(--sans);font-style:normal;font-weight:900;letter-spacing:-2px;line-height:1.03;font-size:58px;max-width:550px;color:#fff;text-shadow:none}
+body[data-game="spiderman-ctns"] .hero-subtitle{color:#fff;letter-spacing:3px;border-left:3px solid #ee3b50;padding-left:12px}
+body[data-game="spiderman-ctns"] .primary-button{background:#d82b40;border:1px solid #ff6577;border-radius:0;color:white;box-shadow:none;text-transform:uppercase;letter-spacing:.7px}
+body[data-game="spiderman-ctns"] .primary-button:hover{background:#ee3b50}
+body[data-game="spiderman-ctns"] :is(.stats,.episode-detail,.boss-group,.prep-card){background:#1a2029;border:1px solid #45515f;border-radius:0;box-shadow:none}
+body[data-game="spiderman-ctns"] .stats{border-top:3px solid #e43b50}
+body[data-game="spiderman-ctns"] .stats p{font-family:var(--sans);font-weight:700}
+body[data-game="spiderman-ctns"] .progress-track{background:#10141b;border:1px solid #596777;border-radius:0}
+body[data-game="spiderman-ctns"] #progress-fill{background:#e33950}
+body[data-game="spiderman-ctns"] .route-banner{background:#241e27;border:1px solid #683c4a;border-left:4px solid #e33950;border-radius:0}
+body[data-game="spiderman-ctns"] .section-heading h2{text-transform:uppercase;font-size:28px;letter-spacing:.5px;font-weight:800}
+body[data-game="spiderman-ctns"] .episode-card{background:#1a2029;border:1px solid #3f4b5a;border-radius:0}
+body[data-game="spiderman-ctns"] .episode-card:hover{background:#272e39;border-color:#8693a5}
+body[data-game="spiderman-ctns"] .episode-card.selected{background:linear-gradient(100deg,#56232e,#27232d);border-color:#f16273;box-shadow:inset 4px 0 #f0475c}
+body[data-game="spiderman-ctns"] .episode-number{font-family:var(--sans);font-style:normal;color:#b9c5d4}
+body[data-game="spiderman-ctns"] .episode-card.selected .episode-number{color:#fff}
+body[data-game="spiderman-ctns"] .episode-tag{font-size:8px;letter-spacing:1.6px}
+body[data-game="spiderman-ctns"] .detail-banner{background:linear-gradient(115deg,#3b202a,#222935);border-bottom:2px solid #e33b50}
+body[data-game="spiderman-ctns"] .detail-banner h2{font-weight:800;letter-spacing:-.4px}
+body[data-game="spiderman-ctns"] :is(.timing-box,.notes,.search-box,select,#game-select){background:#11171f;border:1px solid #4a5666;border-radius:0}
+body[data-game="spiderman-ctns"] .timing-values strong{color:#fff;font-weight:700}
+body[data-game="spiderman-ctns"] .stop-box{background:#2d2029;border-color:#a84b5c;border-left:3px solid #f14a60;border-radius:0}
+body[data-game="spiderman-ctns"] .stop-box p{color:#e0d5db}
+body[data-game="spiderman-ctns"] .detail-footer{background:#11171f}
+body[data-game="spiderman-ctns"] .status-pill{background:#151b25;border-color:#788698;border-radius:0}
+body[data-game="spiderman-ctns"] .objective input{background:#11171f;border-color:#8b9aac;border-radius:0}
+body[data-game="spiderman-ctns"] .objective input:checked{background:#fa5268;border-color:#fa5268}
+body[data-game="spiderman-ctns"] .objective input:checked:after{color:#121720}
+body[data-game="spiderman-ctns"] .route-objective .step-number{color:#e98b97}
+body[data-game="spiderman-ctns"] .copy-button{border-radius:0;border-color:#657387;color:#d6dfec}
+@media(max-width:1150px){body:is([data-game="ff9"],[data-game="spiderman-ctns"]) .hero h1.game-title{font-size:48px;max-width:440px}}
+@media(max-width:900px){body[data-game="ff9"] .sidebar{border-right:0;border-bottom:3px ridge #a0a9b5}body:is([data-game="ff9"],[data-game="spiderman-ctns"]) .sidebar nav{border-top:1px solid var(--line)}body[data-game="ff9"] .nav-button{font-size:11px;padding-left:9px}body[data-game="ff9"] .nav-button.active:before{display:none}}
+@media(max-width:650px){
+  body:is([data-game="ff9"],[data-game="spiderman-ctns"]){--hero-scrim:linear-gradient(90deg,#142037f2,#142037af 70%,#14203780)}
+  body[data-game="spiderman-ctns"]{--hero-scrim:linear-gradient(90deg,#111820f2,#111820bb 70%,#11182088)}
+  body:is([data-game="ff9"],[data-game="spiderman-ctns"]) .hero{min-height:345px;background-position:65% center;padding:28px 22px}
+  body[data-game="ff9"] .hero h1.game-title{font-size:43px;letter-spacing:-1px;max-width:290px}
+  body[data-game="spiderman-ctns"] .hero h1.game-title{font-size:39px;letter-spacing:-1.5px;max-width:300px}
+  body:is([data-game="ff9"],[data-game="spiderman-ctns"]) .hero-subtitle{font-size:9px;letter-spacing:2px}
+  body:is([data-game="ff9"],[data-game="spiderman-ctns"]) .nav-button{font-size:9px;padding:9px 5px}
+  body[data-game="ff9"] .section-heading h2{font-size:29px}
+  body[data-game="spiderman-ctns"] .section-heading h2{font-size:26px}
+}

@@ -4,6 +4,8 @@ A detailed, full-cutscene plan for **43 Kingdom Hearts II Final Mix episodes fol
 
 The series selector also includes **Final Fantasy IX (45 parts)** and **Marvel's Spider-Man: The City That Never Sleeps (20 parts)**. Each game has independent recording status, route checks, completion checks, and production notes.
 
+Each series has its own visual theme: KH retains the twilight command interface; FF9 uses silver-edged blue windows, crystal imagery, and a misty castle/airship illustration; Spider-Man uses red mission panels, a white spider emblem, and a city-map backdrop. `game-themes.css` scopes these styles by the selected game. The illustrations are local SVGs and work offline.
+
 ## Additional roadmaps
 
 - **FF9:** Disc 1 parts 1–11, Disc 2 parts 12–23, Disc 3 parts 24–35, Disc 4 parts 36–45. Story-focused; optional completionist grinds and superbosses are omitted. Target 30–40 minutes, with honest per-episode estimates: story-heavy chapters run longer, and the requested ten-part Disc 4 band creates shorter late chapters. Parts 43–45 use continuous recording with editing boundaries because there is no save between Kuja and Necron.

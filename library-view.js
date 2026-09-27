@@ -14,15 +14,20 @@ function renderRoadmapGuide(e,status) {
 }
 let kingdomShell;
 function renderGameShell() {
-  const selectors=['.series-name','.edition','.hero .eyebrow','.game-title','.hero-subtitle','.hero-copy>p','.route-banner','#prep-view','#bosses-view .section-heading'];
+  const selectors=['.series-name','.edition','.hero .eyebrow','.game-title','.hero-subtitle','.hero-copy>p','.route-banner','#prep-view','#bosses-view .section-heading','.command-label','#roadmap-view .section-heading h2','#roadmap-view .section-heading .eyebrow'];
   if(!kingdomShell)kingdomShell=Object.fromEntries(selectors.map(s=>[s,$(s).innerHTML]));
   const game=GAMES[activeGame],kh=activeGame==='kh2fm';
   document.body.dataset.game=activeGame;
+  document.querySelector('meta[name="theme-color"]').content=activeGame==='ff9'?'#172650':activeGame==='spiderman-ctns'?'#cf283b':'#10151e';
+  document.querySelector('link[rel="icon"]').href=activeGame==='ff9'?'assets/gaia-crystal.svg':activeGame==='spiderman-ctns'?'assets/spider-emblem.svg':'assets/heart-crest.svg';
   document.title=`Wayfinder — ${game.name} Recording Journal`;
   $('#game-select').value=activeGame;
   if(kh)for(const s of selectors)$(s).innerHTML=kingdomShell[s];
   else {
-    $('.series-name').textContent=game.short;
+    $('.series-name').textContent=activeGame==='ff9'?'Final Fantasy IX':'Spider-Man';
+    $('.command-label').textContent=activeGame==='ff9'?'JOURNAL MENU':'MISSION CONTROL';
+    $('#roadmap-view .section-heading h2').textContent=activeGame==='ff9'?'Chronicles of Gaia':'Mission dossier';
+    $('#roadmap-view .section-heading .eyebrow').textContent=activeGame==='ff9'?'YOUR ADVENTURE, ONE CHAPTER AT A TIME':'CITYWIDE OPERATIONS / EPISODE INTEL';
     $('.edition').textContent=`${game.short} · ${EPISODES.length}-PART SERIES`;
     $('.hero .eyebrow').textContent=activeGame==='ff9'?'A PLACE TO CALL HOME':'YOUR FRIENDLY NEIGHBORHOOD RECORDING JOURNAL';
     $('.game-title').textContent=activeGame==='ff9'?'Final Fantasy IX':'Marvel’s Spider-Man';
