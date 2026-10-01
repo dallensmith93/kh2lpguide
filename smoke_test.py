@@ -13,6 +13,15 @@ with sync_playwright() as p:
     assert page.locator('.episode-card').count() == 45
     assert page.locator('#recorded-count').inner_text() == '4'
     assert 'Mulan' in page.locator('#episode-detail h2').inner_text()
+    assert page.locator('#atlantica-route').is_visible()
+    page.locator('[data-route-episode="16"]').click()
+    assert 'Atlantica' in page.locator('#episode-detail h2').inner_text()
+    assert 'Under the Sea' in page.locator('#episode-detail').inner_text()
+    page.locator('[data-route-episode="22"]').click()
+    assert 'Ursula' in page.locator('#episode-detail h2').inner_text()
+    page.locator('[data-route-episode="26"]').click()
+    assert 'A New Day' in page.locator('#episode-detail h2').inner_text()
+    page.locator('[data-episode="5"]').click()
     assert page.evaluate('EPISODES.every((e, i) => e.id === i + 1 && e.objectives.length && e.encounters && e.stop)')
     assert page.evaluate('BOSSES.length === 21 && new Set(BOSSES.map(b => b.id)).size === 21')
     assert page.evaluate('EPISODES.every(e => e.start && e.prep.length >= 2 && e.objectives.length >= 5 && e.cutscenes.length && e.tactics.length && e.commentary.length && e.pickups)')

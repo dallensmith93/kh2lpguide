@@ -98,6 +98,7 @@ function switchView(view) {
 }
 function resetFilters(){currentFilter='all';$('#search').value='';document.querySelectorAll('[data-filter]').forEach(b=>{b.classList.toggle('active',b.dataset.filter==='all');b.setAttribute('aria-pressed',String(b.dataset.filter==='all'));});renderList();}
 document.addEventListener('click',event=>{
+  const routeLink=event.target.closest('[data-route-episode]');if(routeLink){resetFilters();selectEpisode(Number(routeLink.dataset.routeEpisode),true);}
   const episode=event.target.closest('[data-episode]');if(episode)selectEpisode(Number(episode.dataset.episode),innerWidth<=650);
   const nav=event.target.closest('[data-view]');if(nav)switchView(nav.dataset.view);
   const filter=event.target.closest('[data-filter]');if(filter){currentFilter=filter.dataset.filter;document.querySelectorAll('[data-filter]').forEach(b=>{b.classList.toggle('active',b===filter);b.setAttribute('aria-pressed',String(b===filter));});renderList();}

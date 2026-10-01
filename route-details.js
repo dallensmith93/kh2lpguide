@@ -297,6 +297,11 @@ const KH_EPISODES = Array.from({length:45}, (_, index) => {
   else if(id===34) base={...ORIGINAL_EPISODES[34],title:'Hades Paradox Cup — All 50 Rounds',stop:'Underworld Entrance save point, after the round-50 Hades victory and trophy.'};
   else if(id<44) base={...ORIGINAL_EPISODES[(id<34?id+1:id+2)-1],...(id===43?{stop:'Disney Castle Library save point after Lingering Will. Close the KH2FM boss campaign; the next episode begins the Days movie.'}:{})};
   else base={title:id===44?'358/2 Days — Roxas, Axel, and Xion':'358/2 Days — The Friends We Remember',world:'Kingdom Hearts 358/2 Days · HD cinematic collection',stop:id===44?'Pause after Day 193’s The Girl with the Sketch Book, before Day 194~. Record the chapter bookmark for resume.':'After Day 359 and the complete credits, return to the Chapters/menu screen.'};
+  // Surface the musical visits in the current route without rewriting the
+  // original episode archive used for old-progress migration.
+  if(id===16) base={...base,title:'Tron and Atlantica — Under the Sea'};
+  if(id===22) base={...base,title:'The Experiment and Atlantica — Ursula’s Revenge'};
+  if(id===26) base={...base,title:'Pooh and Atlantica — A New Day Is Dawning'};
   const [start,prep,objectives,cutscenes,tactics,commentary,pickups]=DETAILS[id];
   const [editedMin,editedMax,recordingMin,recordingMax]=FULL_SCENE_TIMES[index];
   return {...base,id,kind:id>=44?'watch':id<=30?'story':'endgame',start,prep,objectives,cutscenes,tactics,commentary,pickups,encounters:tactics.map(([name,text])=>`${name}: ${text}`).join(' '),timing:{editedMin,editedMax,recordingMin,recordingMax}};
