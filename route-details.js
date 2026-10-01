@@ -3,8 +3,8 @@
 const FULL_SCENE_TIMES = [
   [45,65,50,80],[45,65,50,80],[35,50,40,65],[55,80,60,95],
   [50,70,60,90],[65,90,75,115],[50,70,60,90],[45,65,55,90],
-  [45,65,55,80],[45,65,55,85],[60,85,70,110],[50,75,60,95],
-  [55,80,65,105],[50,70,60,95],[60,85,70,110],[70,100,85,125],
+  [45,65,55,80],[45,65,55,85],[75,105,85,130],[50,75,60,95],
+  [55,80,65,105],[50,70,60,95],[60,85,70,110],[55,85,70,110],
   [60,85,75,110],[40,60,50,85],[40,60,55,100],[55,80,65,110],
   [40,60,50,85],[50,75,65,100],[40,60,55,85],[50,75,65,100],
   [45,70,60,95],[35,55,45,70],[60,90,80,135],[50,80,70,120],
@@ -77,12 +77,12 @@ const DETAILS = {
   ['Each remaining window’s story.', 'The two Petes arguing and the restoration of the Cornerstone.', 'The Disney Castle resolution and Wisdom unlock.'],
   [['Steamboat / Pete','Use the recovery and pursuit reactions in the boat sequence. During the final fight, respond to the changing arena hazards before committing to damage.'],['Pain and Panic Cup','Use the reduced-cost party Limits to manage groups. Against Leon and Yuffie, keep both visible and avoid getting pinned while focusing one target.']],
   ['Explain Wisdom’s movement and magic identity after it unlocks; do not promise to use it in a cup that restricts Drives.'], 'Wisdom Form; Pain and Panic Cup completion.'],
-11: ['Port Royal’s first landing at the Rampart.',
-  ['Keep magic on shortcuts for the pirate weaknesses.', 'Budget a longer story episode: this world contains several voyages and ship scenes.'],
-  ['Fight the first pirates at the Rampart and follow the rescue through the Harbor.', 'Meet Jack and Will; board the Interceptor and choose the story destination.', 'Explore Isla de Muerta along the required path and protect the escape while the rescue develops.', 'Watch the shipboard betrayal and battle the pursuing pirates.', 'Complete the Interceptor defense and remove the gunpowder before time runs out.', 'Return to Isla de Muerta and note Larxene’s Rock Face portal without entering.', 'Proceed to the Treasure Heap, defeat Barbossa, and keep the curse’s resolution.'],
-  ['Jack’s introduction and the explanation of the cursed gold.', 'The rescue, betrayal, and Interceptor disaster.', 'Barbossa’s defeat, the lifted curse, and farewell.'],
-  [['Cursed pirates','Move fights into moonlight. If attacks bounce off, fix the enemy’s position rather than spending more combos on an invulnerable target.'],['Barbossa / Illuminator','Maintain visibility by handling the Illuminator when it interferes. Watch the partner’s safety as well as Sora’s HP.']],
-  ['Explain the world-specific invulnerability rule before the audience mistakes it for low damage.'], 'Follow the story route only; leave Larxene for Part 31.'],
+11: ['Underworld Entrance after Part 10’s cup; depart via the World Map for Atlantica before Port Royal.',
+  ['Keep magic on shortcuts for the pirate weaknesses.', 'Begin with Atlantica immediately after the Timeless River episode. Only the tutorial and Swim This Way are available now; reserve the Magnet-gated story for Part 16. Allow extra time before Port Royal’s voyages.'],
+  ['Visit Atlantica first: meet Ariel, Flounder, and Sebastian, complete the swimming tutorial, and clear Swim This Way with all its scenes. When the Magnet requirement appears, leave via the World Map for Port Royal; fight the Rampart pirates and follow the rescue through the Harbor.', 'Meet Jack and Will; board the Interceptor and choose the story destination.', 'Explore Isla de Muerta along the required path and protect the escape while the rescue develops.', 'Watch the shipboard betrayal and battle the pursuing pirates.', 'Complete the Interceptor defense and remove the gunpowder before time runs out.', 'Return to Isla de Muerta and note Larxene’s Rock Face portal without entering.', 'Proceed to the Treasure Heap, defeat Barbossa, and keep the curse’s resolution.'],
+  ['Ariel’s reunion, the swimming lesson, Swim This Way, and the next-chapter Magnet prompt; then Jack’s introduction and the explanation of the cursed gold.', 'The rescue, betrayal, and Interceptor disaster.', 'Barbossa’s defeat, the lifted curse, and farewell.'],
+  [['Swim This Way','Follow Sebastian’s rhythm prompts and complete the tutorial song. Do not attempt the next chapter before obtaining Magnet.'],['Cursed pirates','Move fights into moonlight. If attacks bounce off, fix the enemy’s position rather than spending more combos on an invulnerable target.'],['Barbossa / Illuminator','Maintain visibility by handling the Illuminator when it interferes. Watch the partner’s safety as well as Sora’s HP.']],
+  ['Explain the world-specific invulnerability rule before the audience mistakes it for low damage.'], 'Atlantica tutorial and Swim This Way cleared; return in Part 16 for songs 2–3. Follow Port Royal’s story route only; leave Larxene for Part 31.'],
 12: ['Agrabah’s first visit.',
   ['Keep both Fire and Blizzard accessible for the elemental finale.', 'Use the Cave’s saves to refill before trials; skip synthesis detours.'],
   ['Clear the arrival ambush with Iago and meet Jasmine at the Palace.', 'Find Aladdin and Abu, identify Jafar’s lamp, and negotiate at the Peddler’s Shop.', 'Exit through the Bazaar and Palace Walls toward the Cave of Wonders.', 'Guide Abu through the jewel mechanism and finish the Stone Guardian sequence.', 'Descend through the cave trials and clear the required timed Heartless room.', 'Return to town with the treasure and follow Pete to the finale.', 'Defeat the two elemental Lords and keep Genie’s reunion and world ending.'],
@@ -109,10 +109,10 @@ const DETAILS = {
   ['Keep this episode’s three chapters clear with short spoken transitions: Kairi, Pooh, then the computer.'], 'Oathkeeper, Limit Form; Piglet and Rabbit story clears.'],
 16: ['Space Paranoids: Pit Cell with Tron.',
   ['Make space for Stitch’s charm pickup after returning to the real world.', 'Do not compress the password or Mickey scenes; this is a longer episode.'],
-  ['Help Tron regain system access through the Canyon and return to the terminal.', 'Leave the computer to investigate Ansem’s Study and obtain the password.', 'Watch Mickey’s reunion, receive Master Form, and collect the Ukulele Charm near the computer.', 'Return to Space Paranoids and complete the Light Cycle escape.', 'Follow Tron through the required system rooms and energy collection objectives.', 'Defeat Hostile Program and watch the successful access to the data.', 'Use the World Map for Atlantica; complete the swimming tutorial and Swim This Way.', 'With Magnet and five Drive bars available, finish Part of Your World and Under the Sea.'],
-  ['Tron explaining the system and Mickey’s full reunion.', 'The password discovery and Master Form unlock.', 'Tron’s first-visit conclusion and all three Atlantica chapter scenes.'],
+  ['Help Tron regain system access through the Canyon and return to the terminal.', 'Leave the computer to investigate Ansem’s Study and obtain the password.', 'Watch Mickey’s reunion, receive Master Form, and collect the Ukulele Charm near the computer.', 'Return to Space Paranoids and complete the Light Cycle escape.', 'Follow Tron through the required system rooms and energy collection objectives.', 'Defeat Hostile Program and watch the successful access to the data.', 'Return to Atlantica after the first visit in Part 11. Speak to Flounder and use Magnet to move the statue into Ariel’s Grotto.', 'With Magnet and five Drive bars available, finish Part of Your World and Under the Sea.'],
+  ['Tron explaining the system and Mickey’s full reunion.', 'The password discovery and Master Form unlock.', 'Tron’s first-visit conclusion and Atlantica’s Part of Your World and Under the Sea chapter scenes.'],
   [['Light Cycle','Read the turn prompts and use the appropriate attack response; record a successful complete route rather than hiding the minigame.'],['Hostile Program','Collect its dropped clusters to activate the shutdown opportunity. Use the opening for damage, then disengage from the laser patterns.']],
-  ['Explain Master Form’s Drive-orb experience rule when introducing it.', 'Treat Atlantica as a musical chapter; no need to apologize for watching it.'], 'Master Form, Stitch’s Ukulele Charm, five Drive bars; Atlantica chapters 1–3.'],
+  ['Explain Master Form’s Drive-orb experience rule when introducing it.', 'Treat Atlantica as a musical chapter; no need to apologize for watching it.'], 'Master Form, Stitch’s Ukulele Charm, five Drive bars; Atlantica chapters 2–3 (chapter 1 was completed in Part 11).'],
 17: ['Return to Hollow Bastion’s computer-room storyline.',
   ['Restock before the town defense; save when the route offers a safe point.', 'Be ready to review Goofy’s equipment after he rejoins.', 'Collect the Crystal Fissure Torn Page before the army encounter.'],
   ['Watch the computer revelations and Mickey’s explanation before responding to the attack.', 'Leave through the corridors and Postern, clearing the required Heartless and Nobodies.', 'At the Bailey, watch the allied defense and confront Demyx.', 'Keep the complete aftermath involving Goofy; continue through the ally-assisted battles.', 'Reach Crystal Fissure, collect Torn Page 3, and restore Goofy’s equipment if needed.', 'Enter the Great Maw and defeat all 1,000 Heartless.', 'Watch every post-battle scene through the automatic World Map return.'],
@@ -299,6 +299,7 @@ const KH_EPISODES = Array.from({length:45}, (_, index) => {
   else base={title:id===44?'358/2 Days — Roxas, Axel, and Xion':'358/2 Days — The Friends We Remember',world:'Kingdom Hearts 358/2 Days · HD cinematic collection',stop:id===44?'Pause after Day 193’s The Girl with the Sketch Book, before Day 194~. Record the chapter bookmark for resume.':'After Day 359 and the complete credits, return to the Chapters/menu screen.'};
   // Surface the musical visits in the current route without rewriting the
   // original episode archive used for old-progress migration.
+  if(id===11) base={...base,title:'Atlantica — Swim This Way, Then Port Royal',world:'Atlantica → Port Royal'};
   if(id===16) base={...base,title:'Tron and Atlantica — Under the Sea'};
   if(id===22) base={...base,title:'The Experiment and Atlantica — Ursula’s Revenge'};
   if(id===26) base={...base,title:'Pooh and Atlantica — A New Day Is Dawning'};

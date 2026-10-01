@@ -14,6 +14,10 @@ with sync_playwright() as p:
     assert page.locator('#recorded-count').inner_text() == '4'
     assert 'Mulan' in page.locator('#episode-detail h2').inner_text()
     assert page.locator('#atlantica-route').is_visible()
+    page.locator('[data-route-episode="11"]').click()
+    assert 'Atlantica' in page.locator('#episode-detail h2').inner_text()
+    assert 'Swim This Way' in page.locator('#episode-detail').inner_text()
+    assert page.evaluate('EPISODES[10].world === "Atlantica → Port Royal" && EPISODES.length === 45')
     page.locator('[data-route-episode="16"]').click()
     assert 'Atlantica' in page.locator('#episode-detail h2').inner_text()
     assert 'Under the Sea' in page.locator('#episode-detail').inner_text()

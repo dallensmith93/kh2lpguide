@@ -54,10 +54,11 @@ function renderGameShell() {
     atlantica.setAttribute('aria-label','Atlantica visits and unlock requirements');
     $('.route-banner').after(atlantica);
     atlantica.innerHTML=`<div class="atlantica-heading"><div><span class="eyebrow">WORLD ROUTE · ALL FIVE SONGS</span><h2>Atlantica: Ariel’s complete story</h2></div><a href="https://www.khwiki.com/Atlantica" target="_blank" rel="noreferrer">World reference ↗</a></div><div class="atlantica-visits">
-      <button data-route-episode="16"><strong>PART 16 · FIRST VISIT ↗</strong><span>Swim This Way → Part of Your World → Under the Sea</span><small>After Space Paranoids I. Bring Magnet from Oogie Boogie (Part 13) and a maximum Drive Gauge of at least 5 after Hostile Program. This means gauge capacity, not a Form’s level.</small></button>
+      <button data-route-episode="11"><strong>PART 11 · AFTER TIMELESS RIVER ↗</strong><span>Swimming tutorial → Swim This Way</span><small>Start the episode in Atlantica after Part 10. Keep Ariel’s introduction and the complete first song, then continue to Port Royal. The later songs are still locked.</small></button>
+      <button data-route-episode="16"><strong>PART 16 · RETURN VISIT ↗</strong><span>Part of Your World → Under the Sea</span><small>After Space Paranoids I. Bring Magnet from Oogie Boogie (Part 13) and a maximum Drive Gauge of at least 5 after Hostile Program. This means gauge capacity, not a Form’s level.</small></button>
       <button data-route-episode="22"><strong>PART 22 · URSULA ↗</strong><span>Ursula’s Revenge</span><small>Return with Magnera from Port Royal II (Part 20). Keep Ariel’s bargain, the rhythm boss encounter, and its aftermath. Receive Mysterious Abyss.</small></button>
       <button data-route-episode="26"><strong>PART 26 · WORLD FINALE ↗</strong><span>A New Day Is Dawning</span><small>Return with Thundaga from Pride Lands II (Part 23). Finish the last song and all ending scenes before the KH2 finale. No journal-score grind required.</small></button>
-    </div><p>Parts 16 and 22 finish at the Undersea Courtyard save point. Part 26 continues to Twilight Town after Atlantica’s ending.</p>`;
+    </div><p>Part 11 continues to Port Royal and finishes on the World Map. Parts 16 and 22 finish at the Undersea Courtyard save point. Part 26 continues to Twilight Town after Atlantica’s ending.</p>`;
   }
   atlantica.hidden=!kh;
 }
